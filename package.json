@@ -1,7 +1,25 @@
 {
-  "name": "root",
+  "name": "lerna-web-project-starter",
+  "description": "Lerna-based web application monorepo starter",
+  "author": {
+    "name": "Chris Dempsey",
+    "email": "cdallas@gmail.com"
+  },
   "private": true,
+  "scripts": {
+    "lint": "npx prettier --config .config/prettier/prettier.config.js --write --ignore-unknown . && npx eslint --config .config/eslint/.eslintrc.js",
+    "setup": "npm install",
+    "start": "npx lerna run start --stream"
+  },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@commitlint/config-lerna-scopes": "^15.0.0",
+    "eslint": "^8.5.0",
+    "eslint-plugin-react": "^7.28.0",
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0",
+    "lint-staged": "^12.1.3",
+    "prettier": "^2.5.1"
   }
 }
