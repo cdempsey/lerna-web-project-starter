@@ -175,3 +175,6 @@ dist
 
 # Support for Project snippet scope
 !.vscode/*.code-snippets
+
+### Project
+temp

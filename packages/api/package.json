@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "description": "Fastify-based REST API",
+  "main": "src/server.mjs",
+  "license": "MIT",
+  "scripts": {
+    "license-checker": "npx license-checker --json --production --onlyAllow='Apache-2.0;BSD-2-Clause;BSD-3-Clause;MIT;ISC;Artistic-2.0'",
+    "license-checker:log": "npm run license-checker --json --production --onlyAllow='Apache-2.0;BSD-2-Clause;BSD-3-Clause;MIT;ISC;Artistic-2.0' > ../../temp/api-license-checker.log 2>../../temp/api-license-checker-errors.log",
+    "start": "node ./src/server",
+    "start:dev": "nodemon --watch src ./src/server.mjs",
+    "test": "tap -c --reporter=terse",
+    "test:watch": "tap -c --reporter=list --watch"
+  },
+  "dependencies": {
+    "fastify": "^3.25.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "tap": "^15.1.5"
+  }
+}

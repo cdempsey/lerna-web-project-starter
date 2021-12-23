@@ -14,12 +14,17 @@ module.exports = {
   },
   plugins: ['react'],
   ignorePatterns: [
-    '.config/*',
+    '.config/**/*',
     'lerna.json',
-    'LICENSE',
-    'node_modules/*',
-    'package.json',
-    'package-lock.json',
+    '**/LICENSE',
+    '**/node_modules/*',
+    '**/package.json',
+    '**/package-lock.json',
   ],
   rules: {},
+  overrides: [
+    {
+      files: ['*.js', '*.mjs'],
+    },
+  ],
 }

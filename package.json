@@ -1,15 +1,21 @@
 {
   "name": "lerna-web-project-starter",
   "description": "Lerna-based web application monorepo starter",
+  "license": "MIT",
   "author": {
     "name": "Chris Dempsey",
     "email": "cdallas@gmail.com"
   },
   "private": true,
   "scripts": {
-    "lint": "npx prettier --config .config/prettier/prettier.config.js --write --ignore-unknown . && npx eslint --config .config/eslint/.eslintrc.js",
-    "setup": "npm install",
-    "start": "npx lerna run start --stream"
+    "clean": "rimraf temp && npx lerna run clean",
+    "license-checker": "mkdir -p temp && npx lerna run license-checker",
+    "license-checker:log": "mkdir -p temp && npx lerna run license-checker:log",
+    "lint": "npx prettier --config .config/prettier/prettier.config.js --write --ignore-unknown . && npx eslint --config .config/eslint/.eslintrc.js .",
+    "start": "npx lerna run start --stream",
+    "start:dev": "npx lerna run start:dev --stream",
+    "test": "npx lerna run test",
+    "test:watch": "npx lerna run test:watch"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
@@ -20,6 +26,7 @@
     "husky": "^7.0.4",
     "lerna": "^4.0.0",
     "lint-staged": "^12.1.3",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2"
   }
 }
